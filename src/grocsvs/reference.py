@@ -13,7 +13,7 @@ class Reference(object):
         self.std_chroms_to_chroms = collections.OrderedDict()
         self.chrom_lengths = collections.OrderedDict()
 
-        chrom_re = r"(chr)?((\d+)|(X)|(Y))$"
+        chrom_re = r"(chr)?(\d+)?((X)|(Y)|(L)|(R)|(M))?$"
 
         for chrom in self.fasta.keys():
             std_chrom = self.standardize_chrom(chrom)
@@ -25,7 +25,7 @@ class Reference(object):
     @property
     def chroms(self):
         if self.debug:
-            return ["chr20", "chr21"]
+            return ["chrX", "chr4"]
 
         return self.chrom_lengths.keys()
 
