@@ -13,7 +13,7 @@ class Reference(object):
         self.std_chroms_to_chroms = collections.OrderedDict()
         self.chrom_lengths = collections.OrderedDict()
 
-        chrom_re = r"(chr)?(\d+)?((X)|(Y)|(L)|(R)|(M))?$"
+        chrom_re = r"(chr)?[a-z0-9A-Z-._]+$"
 
         for chrom in self.fasta.keys():
             std_chrom = self.standardize_chrom(chrom)
