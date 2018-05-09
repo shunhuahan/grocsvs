@@ -32,7 +32,8 @@ class Reference(object):
     def standardize_chrom(self, chrom):
         if "chr" in chrom:
             return chrom
-        return "chr{}".format(chrom)
+        # return "chr{}".format(chrom)
+        return chrom
 
     def compare_chroms(self, chromx, chromy):
         return cmp(self.chroms.index(chromx), self.chroms.index(chromy))
